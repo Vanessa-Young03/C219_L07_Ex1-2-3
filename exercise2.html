@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="styles.css">
+    <title>Exercise 2</title>
+</head>
+
+<body>
+    <div class="topnav">
+        <a href="exercise1.html">Exercise1</a>
+        <a class="active" href="exercise2.html">Exercise2</a>
+        <a href="exercise3.html">Exercise3</a>
+      </div>
+
+    <br><br>
+    <form id="myForm">
+        <!-- Two text fields - Name and Email -->
+        <input id="name" type="text" placeholder="Name"><br><br>
+        <input id="email" type="email" placeholder="Email"><br><br>
+        <!-- Two radio buttons for Gender - Male and Female -->
+        <input type="radio" value="Male" id="male" name="gender">Male
+        <input type="radio" value="Female" id="female" name="gender">Female
+        <!-- Submit button -->
+        <br><br>
+        <button type="button" onclick="myFunction()">Submit</button>
+    </form>
+<br><br>
+    <!-- Display form data -->
+    <div id="background-color">
+        <div id="displayname"></div>
+        <div id="displayemail"></div>
+        <div id="displayGender"></div>
+    </div>
+
+    <script src="jquery.min.js"></script>
+    <script>
+        // JavaScript to get and display form data
+        function myFunction() {
+            document.getElementById("displayname").innerHTML = name.value;
+            document.getElementById("displayemail").innerHTML = email.value;
+            if (document.getElementById("male").checked) {
+                document.getElementById("displayGender").innerHTML = "Male";
+            }
+            if (document.getElementById("female").checked) {
+                document.getElementById("displayGender").innerHTML = "Female";
+            }
+        }
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("button").click(function()
+            {
+                $("#background-color").css("background-color", "yellow");
+                $("#displayname").css("font-family", "Arial");
+                $("#displayemail").css("font-family", "Arial");
+                $("#displayGender").css("font-family", "Arial");
+                $("#background-color").fadeIn('slow');
+            });
+            $("#background-color").mouseover(function()
+            {
+                $(this).slideUp('slow');
+            });
+        });
+    </script>
+</body>
+
+</html>
